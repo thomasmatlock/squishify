@@ -1,0 +1,29 @@
+h1 {
+  font-size: 16px;
+  font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif; }
+
+.textBoxParent {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center; }
+
+.textBoxChild {
+  border: 1px solid green;
+  width: 100%;
+  height: 100%;
+  border: 1px dotted black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center; }
+
+#userInput,
+#userInputConverted {
+  height: 60%;
+  width: 90%;
+  margin: 10% 10%; }
