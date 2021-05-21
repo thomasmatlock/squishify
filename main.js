@@ -1,10 +1,37 @@
+let userInputSubmit = document.getElementById('userInputSubmit');
+let userInputReset = document.getElementById('userInputReset');
+let userTextContainer_input = document.getElementById('userTextContainer_input');
+let userTextContainer_converted = document.getElementById('userTextContainer_converted');
+
 const init = () => {
     console.log('hello');
-    document.getElementById('userInputSubmit').addEventListener('click', (e) => {
+    userInputSubmit.addEventListener('click', (e) => {
         let userText = document.getElementById('userInput').value;
         // console.log(userText);
         let userTextSquished = squishify(userText);
         document.getElementById('userInputConverted').innerHTML = userTextSquished;
+        userInputSubmit.style.display = 'none';
+        userTextContainer_input.style.display = 'none';
+        userInputReset.style.display = 'flex';
+        userTextContainer_converted.style.display = 'flex';
+
+        reset();
+    });
+};
+
+const reset = () => {
+    document.getElementById('userInputReset').addEventListener('click', (e) => {
+        console.log('userInputReset');
+        // let userText = document.getElementById('userInput').value;
+        // // console.log(userText);
+        // let userTextSquished = squishify(userText);
+        // document.getElementById('userInputConverted').innerHTML = userTextSquished;
+        userInputSubmit.style.display = 'flex';
+        userTextContainer_input.style.display = 'flex';
+        userInputReset.style.display = 'none';
+        userTextContainer_converted.style.display = 'none';
+
+        init(); //
     });
 };
 init();
