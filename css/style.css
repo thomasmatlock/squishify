@@ -169,7 +169,7 @@ p {
   /* IE10+/Edge */
   user-select: none;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); }
-  .textBoxChild:hover {
+  text-align:center .textBoxChild:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
 
 .userTextContainer {
@@ -184,7 +184,8 @@ p {
   /* Firefox */
   -ms-user-select: none;
   /* IE10+/Edge */
-  user-select: none; }
+  user-select: none;
+  text-align: center; }
 
 #userInputReset,
 #userTextContainer_converted {
@@ -201,6 +202,9 @@ p {
 #userInputConverted {
   height: 100%;
   width: 100%; }
+
+.userTextContainer {
+  text-align: center; }
 
 .userInputSubmitBtn {
   width: 300px;

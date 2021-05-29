@@ -2,23 +2,46 @@ let userInputSubmit = document.getElementById('userInputSubmit');
 let userInputReset = document.getElementById('userInputReset');
 let userTextContainer_input = document.getElementById('userTextContainer_input');
 let userTextContainer_converted = document.getElementById('userTextContainer_converted');
+// const sentenceGen = require('./sentenceGen');
 
 const init = () => {
     // console.log('hello');
-    userInputSubmit.addEventListener('click', (e) => {
-        let userText = document.getElementById('userInput').value;
-        // console.log(userText);
-        let userTextSquished = squishify(userText);
-        document.getElementById('userInputConverted').innerHTML = userTextSquished;
-        userInputSubmit.style.display = 'none';
-        userTextContainer_input.style.display = 'none';
-        userInputReset.style.display = 'flex';
-        userTextContainer_converted.style.display = 'flex';
 
-        reset();
+    userInputSubmit.addEventListener('click', (e) => {
+        // userInputSubmit.innerHTML = 'hello';
+        // setTimeout(() => {
+        // userInputSubmit.innerHTML = 'squishing some shtuff...';
+        userInputSubmit.innerHTML = sentenceGenerator();
+        setTimeout(() => {
+            // userInputSubmit.innerHTML = 'smonching WOTS of shtuff...😂😂';
+            userInputSubmit.innerHTML = sentenceGenerator();
+            setTimeout(() => {
+                // userInputSubmit.innerHTML = 'OTAY! smushed EVWEETING!';
+                userInputSubmit.innerHTML = sentenceGenerator();
+                setTimeout(() => {
+                    let userText = document.getElementById('userInput').value;
+                    // console.log(userText);
+                    let userTextSquished = squishify(userText);
+                    document.getElementById('userInputConverted').innerHTML =
+                        userTextSquished;
+                    userInputSubmit.style.display = 'none';
+                    userTextContainer_input.style.display = 'none';
+                    userInputReset.style.display = 'flex';
+                    userTextContainer_converted.style.display = 'flex';
+                    reset();
+                }, 2000);
+            }, 2000);
+        }, 2000);
+        // }, 1500);
     });
 };
-window.addEventListener('load', function() {}, false);
+window.addEventListener(
+    'load',
+    function() {
+        sentenceGenerator();
+    },
+    false
+);
 const reset = () => {
     document.getElementById('userInputReset').addEventListener('click', (e) => {
         console.log('userInputReset');
@@ -69,11 +92,145 @@ const times = (x) => (f) => {
         times(x - 1)(f);
     }
 };
-
 // use it
-const sentenceGenerator = () => {};
 
 // or define intermediate functions for reuse
 let twice = times(2);
 
 // twice the power !
+
+const advArr = [];
+const adjectiveArr = [
+    'eager',
+    'speshow',
+    'ambitious',
+    // 'hungry',
+    'impatient',
+    // 'keen',
+    // 'restless',
+    // 'thirsty',
+    'earnest',
+    // 'hankering',
+    // 'intent',
+    // 'longing',
+    // 'pining',
+    // 'wild',
+    'yearning',
+
+    // 'antsy',
+    'helpful',
+    // 'ardent',
+    // 'athirst',
+    // 'avid',
+    // 'breathless',
+    // 'champing at the bit',
+    // 'covetous',
+    'distracted',
+    // 'dying to',
+    // 'fervent',
+    // 'fervid',
+    'gung ho',
+    // 'hot to trot',
+    'rarin to go',
+    // 'ready and willing',
+    // 'restive',
+    'self-starting',
+    // 'warmblooded',
+    'zealous',
+    'apathetic',
+    // 'careless',
+    // 'dull',
+    'inattentive',
+    'indifferent',
+    'lackadaisical',
+    'lethargic',
+    'passive',
+    'snoring',
+    'snoozing',
+    'sleepy',
+    'tired',
+    // 'weary',
+
+    'drowsy',
+    // 'idle',
+    // 'inert',
+
+    'loafing',
+    // 'neglectful',
+    'out of it',
+    'procrastinating',
+
+    'slothful',
+    'slow',
+    'slow-moving',
+    'snoozy',
+
+    // 'unconcerned',
+    'unenergetic',
+    'unindustrious',
+    // 'unpersevering',
+    // 'unready',
+    'enthusiastic',
+    'lively',
+    'spirited',
+
+    'dashing',
+    'bright',
+    // 'buoyant',
+    'energetic',
+    'frisky',
+
+    'industrious',
+    // 'peppy',
+    'perky',
+];
+const nounArr = [
+    'squishers',
+    'smunchers',
+    'Von Dinos',
+    'Von Squishies',
+    'smonchers',
+    'Pepes',
+    'Wokeez',
+    'Whambos',
+    'Bubzeez',
+];
+const verbArr = [
+    'waking up',
+    'bwinging coffee to',
+    'bwinging shtwahbewwies to',
+    // 'abetting',
+    // 'boosting the',
+    // 'buoying',
+    'cheering',
+    // 'emboldening the',
+    'fortifying',
+    // 'heartening',
+    // 'infusing',
+    'inspiring',
+    // 'lifting',
+    'rallying',
+    // 'steeling',
+    'strengthening',
+    'enkindling',
+    'exciting',
+];
+const emojiArr = [];
+const articleArr = ['a few', 'wots of'];
+const appearanceArr = ['fuzzy', 'kewt', 'wittle', 'adowable'];
+const randomFromArray = function(arr) {
+    randomItem = arr[Math.floor(Math.random() * Math.floor(arr.length - 1))];
+    // console.log(randomItem);
+    return randomItem;
+};
+const sentenceGenerator = function() {
+    let randomAdv = randomFromArray(advArr);
+    let randomAdj = randomFromArray(adjectiveArr);
+    let randomNoun = randomFromArray(nounArr);
+    let randomVerb = randomFromArray(verbArr);
+    let randomAppearance = randomFromArray(appearanceArr);
+    let randomArticle = randomFromArray(articleArr);
+    return (sentence = `${randomVerb} ${randomArticle} ${randomAdj} ${randomAppearance} ${randomNoun}...`);
+    // console.log(`${randomVerb} ${randomAdj} ${randomNoun}...`);
+    // console.log(`${randomAdv} ${randomVerb} ${randomAdj} ${randomNoun}...`);
+};
