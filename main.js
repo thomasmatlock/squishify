@@ -29,9 +29,9 @@ const init = () => {
                     userInputReset.style.display = 'flex';
                     userTextContainer_converted.style.display = 'flex';
                     reset();
-                }, 2000);
-            }, 2000);
-        }, 2000);
+                }, 2500);
+            }, 2500);
+        }, 2500);
         // }, 1500);
     });
 };
@@ -215,7 +215,22 @@ const verbArr = [
     'enkindling',
     'exciting',
 ];
-const emojiArr = [];
+const emojiArr = [
+    '😫',
+    '😂',
+    '😍',
+    '🤣',
+    '😯',
+    '😘',
+    '😭',
+    '🤗',
+    '😤',
+    '🤔',
+    '🤯',
+    '🤩',
+    '🧔🏿',
+    '🍆',
+];
 const articleArr = ['a few', 'wots of'];
 const appearanceArr = ['fuzzy', 'kewt', 'wittle', 'adowable'];
 const randomFromArray = function(arr) {
@@ -230,7 +245,8 @@ const sentenceGenerator = function() {
     let randomVerb = randomFromArray(verbArr);
     let randomAppearance = randomFromArray(appearanceArr);
     let randomArticle = randomFromArray(articleArr);
-    return (sentence = `${randomVerb} ${randomArticle} ${randomAdj} ${randomAppearance} ${randomNoun}...`);
+    let randomEmoji = randomFromArray(emojiArr);
+    return (sentence = `${randomVerb} ${randomArticle} ${randomAdj} ${randomAppearance} ${randomNoun} ${randomEmoji}...`);
     // console.log(`${randomVerb} ${randomAdj} ${randomNoun}...`);
     // console.log(`${randomAdv} ${randomVerb} ${randomAdj} ${randomNoun}...`);
 };
