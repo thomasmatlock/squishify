@@ -230,6 +230,15 @@ const emojiArr = [
     '🤩',
     '🧔🏿',
     '🍆',
+    '😎',
+    '🤨',
+    '😏',
+    '🙄',
+    '😐',
+    '😁',
+    '😴',
+    '😯',
+    '😫',
 ];
 const articleArr = ['a few', 'wots of'];
 const appearanceArr = ['fuzzy', 'kewt', 'wittle', 'adowable'];
