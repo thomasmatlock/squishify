@@ -4,7 +4,7 @@ let userTextContainer_input = document.getElementById('userTextContainer_input')
 let userTextContainer_converted = document.getElementById('userTextContainer_converted');
 
 const init = () => {
-    console.log('hello');
+    // console.log('hello');
     userInputSubmit.addEventListener('click', (e) => {
         let userText = document.getElementById('userInput').value;
         // console.log(userText);
@@ -18,7 +18,7 @@ const init = () => {
         reset();
     });
 };
-
+window.addEventListener('load', function() {}, false);
 const reset = () => {
     document.getElementById('userInputReset').addEventListener('click', (e) => {
         console.log('userInputReset');
@@ -70,6 +70,7 @@ const times = (x) => (f) => {
 };
 
 // use it
+const sentenceGenerator = () => {};
 
 // or define intermediate functions for reuse
 let twice = times(2);
