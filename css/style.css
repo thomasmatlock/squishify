@@ -3,6 +3,7 @@
     :link is a pseudo-class, which are special states of selectors
     we want to use this to style elements under special conditions, like hover or link or whatever
     here we want the normal and visited states to look styled the same*/
+  margin-top: 2vh;
   /*so the :after pseudo element is pretty cool
       here we create the ghost element that appears on hover then retreats again, it appear to zoom into infinity
       it adds virtual element right after element we are selecting which we can style

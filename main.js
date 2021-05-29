@@ -39,6 +39,7 @@ init();
 const squishify = (text) => {
     times(500)(() => {
         text = text.replace(`r`, 'w');
+        text = text.replace(`ll`, 'ww');
         text = text.replace(`ith`, 'id');
         text = text.replace(`st`, 'sht');
         text = text.replace(`that`, 'dat');
