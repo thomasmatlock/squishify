@@ -2,15 +2,9 @@ let userInputSubmit = document.getElementById('userInputSubmit');
 let userInputReset = document.getElementById('userInputReset');
 let userTextContainer_input = document.getElementById('userTextContainer_input');
 let userTextContainer_converted = document.getElementById('userTextContainer_converted');
-// const sentenceGen = require('./sentenceGen');
 
 const init = () => {
-    // console.log('hello');
-
     userInputSubmit.addEventListener('click', (e) => {
-        // userInputSubmit.innerHTML = 'hello';
-        // setTimeout(() => {
-        // userInputSubmit.innerHTML = 'squishing some shtuff...';
         userInputSubmit.innerHTML = sentenceGenerator();
         setTimeout(() => {
             // userInputSubmit.innerHTML = 'smonching WOTS of shtuff...😂😂';
@@ -45,10 +39,6 @@ window.addEventListener(
 const reset = () => {
     document.getElementById('userInputReset').addEventListener('click', (e) => {
         console.log('userInputReset');
-        // let userText = document.getElementById('userInput').value;
-        // // console.log(userText);
-        // let userTextSquished = squishify(userText);
-        // document.getElementById('userInputConverted').innerHTML = userTextSquished;
         userInputSubmit.style.display = 'flex';
         userTextContainer_input.style.display = 'flex';
         userInputReset.style.display = 'none';
@@ -92,12 +82,8 @@ const times = (x) => (f) => {
         times(x - 1)(f);
     }
 };
-// use it
 
-// or define intermediate functions for reuse
 let twice = times(2);
-
-// twice the power !
 
 const advArr = [];
 const adjectiveArr = [
@@ -113,28 +99,18 @@ const adjectiveArr = [
     'rarin to go',
     'self-starting',
     'zealous',
-    // 'inattentive',
-    // 'indifferent',
     'lackadaisical',
-    // 'lethargic',
     'snoring',
     'snoozing',
     'sleepy',
     'tired',
     'drowsy',
-    // 'loafing',
-    // 'out of it',
     'procrastinating',
-    // 'slothful',
-    // 'slow',
     'slow-moving',
-    // 'snoozy',
     'unenergetic',
     'unindustrious',
     'enthusiastic',
     'lively',
-    // 'spirited',
-    // 'dashing',
     'bright',
     'energetic',
     'frisky',
@@ -176,8 +152,6 @@ const emojiArr = [
     '🤔',
     '🤯',
     '🤩',
-    // '🧔🏿',
-    // '🍆',
     '😎',
     '🤨',
     '😏',
@@ -195,7 +169,7 @@ const randomFromArray = function(arr) {
     return randomItem;
 };
 const sentenceGenerator = function() {
-    let randomAdv = randomFromArray(advArr);
+    // let randomAdv = randomFromArray(advArr);
     let randomAdj = randomFromArray(adjectiveArr);
     let randomNoun = randomFromArray(nounArr);
     let randomVerb = randomFromArray(verbArr);
@@ -203,6 +177,4 @@ const sentenceGenerator = function() {
     let randomArticle = randomFromArray(articleArr);
     let randomEmoji = randomFromArray(emojiArr);
     return (sentence = `${randomVerb} ${randomArticle} ${randomAdj} ${randomAppearance} ${randomNoun} ${randomEmoji}...`);
-    // console.log(`${randomVerb} ${randomAdj} ${randomNoun}...`);
-    // console.log(`${randomAdv} ${randomVerb} ${randomAdj} ${randomNoun}...`);
 };
