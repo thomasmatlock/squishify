@@ -18,6 +18,12 @@ const init = () => {
                     let userTextSquished = squishify(userText);
                     document.getElementById('userInputConverted').innerHTML =
                         userTextSquished;
+                    // DISPLAY FLEX OR NONE
+                    // userInputSubmit.style.display = 'none';
+                    // userTextContainer_input.style.display = 'none';
+                    // userInputReset.style.display = 'flex';
+                    // userTextContainer_converted.style.display = 'flex';
+                    // OPACITY/ZINDEX
                     userInputSubmit.style.display = 'none';
                     userTextContainer_input.style.display = 'none';
                     userInputReset.style.display = 'flex';

@@ -76,7 +76,7 @@
         transition: all 0.4s;
     }
     &--animated {
-        animation: moveInBottom 1s ease-out 1s;
+        animation: moveInBottom 0.1s ease-out 1s;
         /*last value is delay, we want it to come in last*/
         animation-fill-mode: backwards;
         /*without this, the element initially appears, then after delay, disappears, then animates
