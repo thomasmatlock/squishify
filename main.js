@@ -4,7 +4,6 @@ let userTextContainer_input = document.getElementById('userTextContainer_input')
 let userTextContainer_converted = document.getElementById('userTextContainer_converted');
 
 const init = () => {
-    let delay = 100;
     userInputSubmit.addEventListener('click', (e) => {
         userInputSubmit.innerHTML = sentenceGenerator();
         setTimeout(() => {
@@ -24,9 +23,10 @@ const init = () => {
                     userInputReset.style.display = 'flex';
                     userTextContainer_converted.style.display = 'flex';
                     reset();
-                }, delay);
-            }, delay);
-        }, delay);
+                }, 2500);
+            }, 2500);
+        }, 2500);
+        // }, 1500);
     });
 };
 window.addEventListener(
@@ -147,7 +147,6 @@ const emojiArr = [
     '😯',
     '😘',
     '😭',
-
     '🤗',
     '😤',
     '🤔',
